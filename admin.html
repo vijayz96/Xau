@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#090b10">
+  <title>CodeVault — Admin</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="bg-grid"></div>
+  <header class="topbar">
+    <a class="brand" href="index.html"><span class="brand-mark">&lt;/&gt;</span> CodeVault</a>
+    <nav><a href="index.html">Programs</a><a class="active" href="admin.html">Admin</a></nav>
+  </header>
+
+  <main class="container admin-container">
+    <section id="loginPanel" class="auth-card">
+      <div class="eyebrow">SECURE ADMIN</div>
+      <h1>Welcome back.</h1>
+      <p>Sign in with the Firebase administrator account.</p>
+      <form id="loginForm">
+        <label>Email<input id="email" type="email" required placeholder="admin@example.com"></label>
+        <label>Password<input id="password" type="password" required placeholder="••••••••"></label>
+        <button class="btn primary full" type="submit">Sign In</button>
+        <div id="loginError" class="error"></div>
+      </form>
+    </section>
+
+    <section id="dashboard" class="hidden">
+      <div class="admin-title">
+        <div><div class="eyebrow">CONTROL CENTER</div><h1>Program Manager</h1></div>
+        <button id="logoutBtn" class="btn ghost">Sign Out</button>
+      </div>
+
+      <div class="stats admin-stats">
+        <div class="stat"><strong id="aTotal">0</strong><span>Total</span></div>
+        <div class="stat"><strong id="aPython">0</strong><span>Python</span></div>
+        <div class="stat"><strong id="aSql">0</strong><span>SQL</span></div>
+        <div class="stat"><strong id="aTableau">0</strong><span>Tableau</span></div>
+        <div class="stat"><strong id="aEdc">0</strong><span>EDC</span></div>
+      </div>
+
+      <div class="admin-layout">
+        <section class="panel">
+          <div class="panel-head"><h2 id="formTitle">Add Program</h2><button id="cancelEdit" class="text-btn hidden">Cancel edit</button></div>
+          <form id="programForm">
+            <label>Subject
+              <select id="subject" required>
+                <option value="Python">Python</option>
+                <option value="SQL">SQL</option>
+                <option value="Tableau">Tableau</option>
+                <option value="EDC">EDC</option>
+              </select>
+            </label>
+            <label>Program Title<input id="title" required placeholder="e.g. Factorial of a Number"></label>
+            <label>Description<textarea id="description" rows="3" placeholder="Short explanation for students..."></textarea></label>
+            <label>Difficulty
+              <select id="difficulty">
+                <option>Easy</option><option>Medium</option><option>Hard</option>
+              </select>
+            </label>
+            <label>Program Code<textarea id="code" class="code-input" rows="15" required placeholder="Paste your program code here..."></textarea></label>
+            <button class="btn primary full" type="submit" id="saveBtn">Save Program</button>
+          </form>
+        </section>
+
+        <section class="panel">
+          <div class="panel-head"><h2>Saved Programs</h2></div>
+          <input id="adminSearch" class="search full-search" type="search" placeholder="Search saved programs...">
+          <div id="adminList" class="admin-list"></div>
+        </section>
+      </div>
+    </section>
+  </main>
+
+  <div id="toast" class="toast"></div>
+  <script type="module" src="js/admin.js"></script>
+</body>
+</html>

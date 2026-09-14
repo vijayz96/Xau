@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#090b10">
+  <title>CodeVault — Exam Programs</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="bg-grid"></div>
+  <header class="topbar">
+    <a class="brand" href="index.html"><span class="brand-mark">&lt;/&gt;</span> CodeVault</a>
+    <nav><a class="active" href="index.html">Programs</a><a href="admin.html">Admin</a></nav>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <div class="eyebrow">EXAM CODE LIBRARY</div>
+      <h1>Your programs.<br><span>Ready to copy.</span></h1>
+      <p>Python, SQL, Tableau and EDC programs in one clean, searchable place.</p>
+      <div class="hero-actions">
+        <a class="btn primary" href="#programs">Browse Programs</a>
+        <a class="btn ghost" href="admin.html">Admin Panel</a>
+      </div>
+    </section>
+
+    <section class="stats">
+      <div class="stat"><strong id="totalCount">0</strong><span>Total Programs</span></div>
+      <div class="stat"><strong id="pythonCount">0</strong><span>Python</span></div>
+      <div class="stat"><strong id="sqlCount">0</strong><span>SQL</span></div>
+      <div class="stat"><strong id="tableauCount">0</strong><span>Tableau</span></div>
+      <div class="stat"><strong id="edcCount">0</strong><span>EDC</span></div>
+    </section>
+
+    <section id="programs" class="library-section">
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">LIBRARY</div>
+          <h2>Choose a subject</h2>
+        </div>
+        <input id="searchInput" class="search" type="search" placeholder="Search programs...">
+      </div>
+      <div id="subjectFilters" class="filters"></div>
+      <div id="programGrid" class="program-grid">
+        <div class="loading">Loading programs<span>...</span></div>
+      </div>
+    </section>
+  </main>
+
+  <div id="toast" class="toast"></div>
+  <script type="module" src="js/index.js"></script>
+</body>
+</html>
